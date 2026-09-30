@@ -1,9 +1,8 @@
 node_modules/
 .env
 .DS_Store
-npm-debug.log*
 coverage/
-uploads/
-exports/
-*.sqlite
-*.db
+*.log
+apps/**/dist/
+apps/**/build/
+apps/**/node_modules/
