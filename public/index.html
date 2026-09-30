@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Bot Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local system</p>
+          <h1>AI Bot Studio</h1>
+        </div>
+        <button id="refreshAll" class="secondary">Refresh</button>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel">
+          <h2>Create a Bot</h2>
+          <form id="botForm" class="stack">
+            <label>
+              Bot name
+              <input type="text" name="name" placeholder="Marketing Analyst" required />
+            </label>
+            <label>
+              Description
+              <textarea name="description" rows="2" placeholder="Helpful description"></textarea>
+            </label>
+            <label>
+              Model
+              <input type="text" name="model" value="gpt-4o-mini" />
+            </label>
+            <label>
+              System prompt
+              <textarea name="systemPrompt" rows="3" placeholder="You are a precise assistant..."></textarea>
+            </label>
+            <label>
+              User prompt
+              <textarea name="prompt" rows="5" placeholder="Generate a campaign brief for..." required></textarea>
+            </label>
+            <button type="submit">Save Bot</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Bot Library</h2>
+          <div id="botsList" class="card-list"></div>
+        </section>
+      </main>
+
+      <section class="panel project-panel">
+        <div class="project-header">
+          <h2>Project Builder</h2>
+        </div>
+
+        <form id="projectForm" class="stack">
+          <label>
+            Project name
+            <input type="text" name="projectName" placeholder="Spring Launch Campaign" required />
+          </label>
+          <label>
+            Project description
+            <textarea name="projectDescription" rows="2" placeholder="Describe the goal and linked tasks"></textarea>
+          </label>
+
+          <div>
+            <h3>Link bots</h3>
+            <div id="botSelector" class="checkbox-list"></div>
+          </div>
+
+          <button type="submit">Create Project</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Projects</h2>
+        <div id="projectsList" class="project-list"></div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
